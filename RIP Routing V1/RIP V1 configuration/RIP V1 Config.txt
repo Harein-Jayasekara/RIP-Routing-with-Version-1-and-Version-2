@@ -1,0 +1,169 @@
+				ALPHA
+
+Router(config)#router rip
+Router(config-router)#version 1
+Router(config-router)#network 1.1.1.0
+Router(config-router)#network 10.10.10.0
+Router(config-router)#network 20.20.20.0
+Router(config-router)#exit
+Router(config)#
+
+
+Router#ping 30.30.30.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 30.30.30.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms
+
+Router#ping 30.30.30.2
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 30.30.30.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms
+
+Router#ping 10.10.10.2
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.10.10.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms
+
+Router#ping 20.20.20.2
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 20.20.20.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/0 ms
+
+Router#
+Router#ping 2.2.2.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 2.2.2.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms
+
+Router#ping 1.1.1.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/4 ms
+
+Router#
+
+
+
+
+
+
+
+				BETA
+Router(config)#
+Router(config)#router rip
+Router(config-router)#version 1
+Router(config-router)#network 10.10.10.0
+Router(config-router)#network 30.30.30.0
+Router(config-router)#network 2.2.2.0
+Router(config-router)#exit
+Router(config)#
+
+
+Router#ping 1.1.1.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms
+
+Router#ping 10.10.10.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.10.10.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms
+
+Router#ping 20.20.20.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 20.20.20.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms
+
+Router#ping 3.3.3.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 3.3.3.1, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+
+Router#ping 20.20.20.2
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 20.20.20.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms
+
+Router#ping 30.30.30.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 30.30.30.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/0 ms
+
+Router#
+
+
+
+
+
+
+				GAMMA
+
+Router(config-if)#ip address 30.30.30.1 255.255.255.0
+Router(config-if)#exit
+Router(config)#
+Router(config)#router rip
+Router(config-router)#version 1
+Router(config-router)#network 20.20.20.0
+Router(config-router)#network 30.30.30.0
+Router(config-router)#network 3.3.3.0
+Router(config-router)#exit
+Router(config)#
+
+Router#ping 1.1.1.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms
+
+Router#ping 2.2.2.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 2.2.2.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms
+
+Router#ping 10.10.10.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.10.10.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms
+
+Router#ping 10.10.10.2
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.10.10.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms
+
+Router#ping 30.30.30.2
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 30.30.30.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms

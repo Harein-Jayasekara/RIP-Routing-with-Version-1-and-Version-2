@@ -1,0 +1,24 @@
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#key chain FRUITS
+Router(config-keychain)#key 1
+Router(config-keychain-key)#key-string apple
+Router(config-keychain-key)#exit
+Router(config-keychain)#exit
+Router(config)#int gig
+Router(config)#int gigabitEthernet 0/0
+Router(config-if)#ip rip auth
+Router(config-if)#ip rip authen
+Router(config-if)#ip rip authentication key-chain FRUITS
+                     ^
+% Invalid input detected at '^' marker.
+	
+Router(config-if)#ip rip authentication mode text
+                     ^
+% Invalid input detected at '^' marker.
+	
+Router(config-if)#ip rip authentication mode md5
+                     ^
+% Invalid input detected at '^' marker.
+	
+Router(config-if)#
